@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminLoginView from "./screens/AdminLoginView";
-import LocationView from "./screens/LocationView";
+import NonAcceptLocationsView from "./screens/NonAcceptLocationsView";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<AdminLoginView />} />
-          <Route path="/location" element={<LocationView />} />
+          <Route path="/location" element={<NonAcceptLocationsView />} />
         </Routes>
       </div>
     </Router>

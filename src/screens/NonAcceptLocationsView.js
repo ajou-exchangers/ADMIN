@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./LocationView.css";
+import "./NonAcceptLocationsView.css";
 import Header from "../components/Header";
+import LocationItem from "../components/LocationItem";
 
-const LocationView = () => {
+const NonAcceptLocationsView = () => {
   const [locations, setLocations] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -33,22 +34,7 @@ const LocationView = () => {
       <h2>Add Locations</h2>
       <ul className="location-list">
         {locations.map((location) => (
-          <li key={location._id} className="location-item">
-            <div className="top-container">
-              <div className="name-info">
-                <p>{location.koName}</p>
-                <p>( {location.enName} )</p>
-              </div>
-              <p>{location.category}</p>
-            </div>
-            <div className="bottom-container">
-              <div className="address-info">
-                <p>{location.koAddress}</p>
-                <p>( {location.enAddress} )</p>
-              </div>
-              <p>Created At: {location.createdAt}</p>
-            </div>
-          </li>
+          <LocationItem location={location} />
         ))}
       </ul>
       <div className="pagination-buttons">
@@ -63,4 +49,4 @@ const LocationView = () => {
   );
 };
 
-export default LocationView;
+export default NonAcceptLocationsView;
