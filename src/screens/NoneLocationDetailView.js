@@ -30,7 +30,7 @@ function NoneLocationDetailView() {
     fetchLocationDetail();
   }, []);
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <Header />
       <div className="detail-container">
         <KaKao location={location} />

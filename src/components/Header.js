@@ -9,8 +9,11 @@ const Header = () => {
         <h1>Exchangers</h1>
       </div>
       <div className="header-right">
-        <Link to="/">
-          <button>장소 등록</button>
+        <Link to="/none-locations">
+          <button>장소 등록 목록</button>
+        </Link>
+        <Link to="/none-locations">
+          <button>등록된 장소 목록</button>
         </Link>
         <Link to="/edit-location">
           <button>장소 수정</button>

@@ -60,8 +60,6 @@ function LocationDetail({ location }) {
           <p className="label">Category</p>
           <p>{location?.category}</p>
         </div>
-        <p>Latitude: {location?.latitude}</p>
-        <p>Longitude: {location?.longitude}</p>
         <div>
           <p className="label">Created At</p>
           <p>{location?.createdAt}</p>
