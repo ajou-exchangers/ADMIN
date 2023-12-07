@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LocationDetail from "../components/LocationDetail";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 function NoneLocationDetailView() {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ function NoneLocationDetailView() {
   }, []);
   return (
     <div>
+      <Header />
       <LocationDetail location={location} />
     </div>
   );
