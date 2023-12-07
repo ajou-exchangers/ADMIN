@@ -1,0 +1,66 @@
+h2 {
+  margin-inline: 50px;
+}
+.location-list {
+  list-style: none;
+  padding: 0;
+  margin-inline: 50px;
+}
+
+.location-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 100px;
+}
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top-container p {
+  font-weight: bold;
+}
+
+.bottom-container p {
+  font-weight: normal;
+}
+
+.name-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.name-info p {
+  margin-right: 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.address-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.address-info p {
+  margin-right: 10px;
+  font-size: small;
+  font-weight: bold;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
