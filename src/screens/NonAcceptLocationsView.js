@@ -3,6 +3,7 @@ import axios from "axios";
 import "./NonAcceptLocationsView.css";
 import Header from "../components/Header";
 import LocationItem from "../components/LocationItem";
+import { Link } from "react-router-dom";
 
 const NonAcceptLocationsView = () => {
   const [locations, setLocations] = useState([]);
@@ -34,7 +35,9 @@ const NonAcceptLocationsView = () => {
       <h2>Add Locations</h2>
       <ul className="location-list">
         {locations.map((location) => (
-          <LocationItem location={location} />
+          <Link key={location._id} to={`/none-locations/${location._id}`}>
+            <LocationItem location={location} />
+          </Link>
         ))}
       </ul>
       <div className="pagination-buttons">
