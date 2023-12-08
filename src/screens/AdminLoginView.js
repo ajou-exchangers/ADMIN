@@ -15,6 +15,9 @@ const AdminLoginView = () => {
         {
           email,
           password,
+        },
+        {
+          withCredentials: true,
         }
       );
 

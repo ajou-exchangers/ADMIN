@@ -19,8 +19,6 @@ const NonAcceptLocationsView = () => {
             withCredentials: true,
           }
         );
-
-        console.log("Locations:", response.data);
         setLocations(response.data);
       } catch (e) {
         if (e.response) {
