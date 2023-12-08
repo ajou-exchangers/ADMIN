@@ -3,9 +3,10 @@ import axios from "axios";
 import "./NonAcceptLocationsView.css";
 import Header from "../components/Header";
 import LocationItem from "../components/LocationItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NonAcceptLocationsView = () => {
+  const navigate = useNavigate();
   const [locations, setLocations] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -21,8 +22,15 @@ const NonAcceptLocationsView = () => {
 
         console.log("Locations:", response.data);
         setLocations(response.data);
-      } catch (error) {
-        console.error("Failed to fetch locations:", error);
+      } catch (e) {
+        if (e.response) {
+          if (e.response.status === 401 || e.response.status === 403) {
+            alert("You do not have permission.");
+            navigate("/");
+            return;
+          }
+        }
+        alert("Falied to accept location");
       }
     };
 

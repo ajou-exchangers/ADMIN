@@ -21,7 +21,7 @@ const AdminLoginView = () => {
         }
       );
 
-      navigate("/location");
+      navigate("/none-locations");
     } catch (error) {
       alert("Admin account does not exist or does not have permission.");
     }

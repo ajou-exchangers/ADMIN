@@ -20,7 +20,7 @@ function LocationDetail({ location }) {
               Kiosk Available:{" "}
               <input
                 type="checkbox"
-                checked={location?.kioskAvailable}
+                checked={location?.kioskAvailable || false}
                 disabled
               />
             </p>
@@ -28,7 +28,7 @@ function LocationDetail({ location }) {
               Parking Available:{" "}
               <input
                 type="checkbox"
-                checked={location?.parkingAvailable}
+                checked={location?.parkingAvailable || false}
                 disabled
               />
             </p>
@@ -38,7 +38,7 @@ function LocationDetail({ location }) {
               English Speaking:{" "}
               <input
                 type="checkbox"
-                checked={location?.englishSpeaking}
+                checked={location?.englishSpeaking || false}
                 disabled
               />
             </p>
@@ -46,7 +46,7 @@ function LocationDetail({ location }) {
               WiFi Available:{" "}
               <input
                 type="checkbox"
-                checked={location?.wifiAvailable}
+                checked={location?.wifiAvailable || false}
                 disabled
               />
             </p>
