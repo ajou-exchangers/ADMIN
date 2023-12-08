@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminLoginView from "./screens/AdminLoginView";
 import NonAcceptLocationsView from "./screens/NonAcceptLocationsView";
 import NoneLocationDetailView from "./screens/NoneLocationDetailView";
+import LocationsView from "./screens/LocationsView";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
             path="/none-locations/:id"
             element={<NoneLocationDetailView />}
           />
+          <Route path="/locations" element={<LocationsView />} />
+          <Route path="/locations/:id" />
         </Routes>
       </div>
     </Router>

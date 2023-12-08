@@ -30,7 +30,7 @@ const Header = () => {
         <Link to="/none-locations">
           <button>장소 등록 목록</button>
         </Link>
-        <Link to="/none-locations">
+        <Link to="/locations">
           <button>등록된 장소 목록</button>
         </Link>
         <Link to="/edit-location">
