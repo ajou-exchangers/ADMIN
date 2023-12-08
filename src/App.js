@@ -4,6 +4,7 @@ import AdminLoginView from "./screens/AdminLoginView";
 import NonAcceptLocationsView from "./screens/NonAcceptLocationsView";
 import NoneLocationDetailView from "./screens/NoneLocationDetailView";
 import LocationsView from "./screens/LocationsView";
+import LocationDetailView from "./screens/LocationDetailView";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             element={<NoneLocationDetailView />}
           />
           <Route path="/locations" element={<LocationsView />} />
-          <Route path="/locations/:id" />
+          <Route path="/locations/:id" element={<LocationDetailView />} />
         </Routes>
       </div>
     </Router>

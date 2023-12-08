@@ -2,7 +2,6 @@ import React from "react";
 import "./LocationDetail.css";
 
 function LocationDetail({ location }) {
-  console.log(location);
   return (
     <div className="container">
       <div>

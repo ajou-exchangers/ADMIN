@@ -40,9 +40,9 @@ const LocationsView = () => {
       <h2>Locations</h2>
       <ul className="location-list">
         {currentItems.map((location) => (
-          // <Link key={location._id} to={`/none-locations/${location._id}`}>
-          <LocationItem location={location} />
-          // </Link>
+          <Link key={location._id} to={`/locations/${location._id}`}>
+            <LocationItem location={location} />
+          </Link>
         ))}
       </ul>
       <div className="pagination-buttons">
