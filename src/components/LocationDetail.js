@@ -14,6 +14,7 @@ function LocationDetail({ location }) {
           <p>{location?.koAddress}</p>
           <p>{location?.enAddress}</p>
         </div>
+
         <div className="check-box-container">
           <div className="child-check-box-container">
             <p>

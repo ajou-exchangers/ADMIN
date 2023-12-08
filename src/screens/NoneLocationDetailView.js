@@ -77,10 +77,17 @@ function NoneLocationDetailView() {
     <div style={{ height: "100vh" }}>
       <Header />
       <div className="detail-container">
-        <KaKao location={location} />
+        <div className="map-container">
+          <img
+            style={{ width: "250px" }}
+            src={location?.image}
+            alt="locationImage"
+          />
+          <KaKao location={location} size={300} />
+        </div>
         <LocationDetail location={location} />
       </div>
-      <div>
+      <div className="button-container">
         <button onClick={handleAccept}>Accept Location</button>
         <button onClick={handleReject}>Reject Location</button>
       </div>

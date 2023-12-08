@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 const { kakao } = window;
 
-function KaKao({ location }) {
+function KaKao({ location, size }) {
   useEffect(() => {
     const container = document.getElementById("map");
     const options = {
@@ -33,7 +33,7 @@ function KaKao({ location }) {
   return (
     <div
       id="map"
-      style={{ width: "500px", height: "500px", marginRight: "20px" }}
+      style={{ width: size, height: size, marginRight: "20px" }}
     ></div>
   );
 }
