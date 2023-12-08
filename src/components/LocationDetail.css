@@ -3,6 +3,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .title-container {
@@ -13,11 +16,22 @@
 .title-container p {
   margin-right: 5px;
   font-weight: bold;
+  font-size: large;
+}
+
+.address-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .check-box-container {
   display: flex;
   flex-direction: row;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  justify-content: space-between;
 }
 
 .check-box-container .child-check-box-container {
@@ -30,5 +44,17 @@
 }
 
 .label {
-  font-size: small;
+  font-size: large;
+  font-weight: bold;
+}
+
+.category {
+  font-size: large;
+  font-weight: bold;
+}
+
+.description-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
 }

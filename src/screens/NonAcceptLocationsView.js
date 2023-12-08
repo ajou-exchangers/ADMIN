@@ -40,7 +40,7 @@ const NonAcceptLocationsView = () => {
   return (
     <div>
       <Header />
-      <h2>Add Locations</h2>
+      <h2>Unregistered locations</h2>
       <ul className="location-list">
         {locations.map((location) => (
           <Link key={location._id} to={`/none-locations/${location._id}`}>
