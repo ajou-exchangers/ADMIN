@@ -33,9 +33,6 @@ const Header = () => {
         <Link to="/locations">
           <button>등록된 장소 목록</button>
         </Link>
-        <Link to="/edit-location">
-          <button>장소 수정</button>
-        </Link>
         <button onClick={handleLogout}>로그아웃</button>
       </div>
     </header>
