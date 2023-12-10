@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import LocationDetail from "../components/LocationDetail";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import MemoizedHeader from "../components/Header";
-import KaKao from "../components/KaKao";
 import "./NoneLocationDetailView.css";
+import MemoizedLocationInfo from "../components/LocationInfo";
 
 function LocationDetailView() {
   const navigate = useNavigate();
@@ -63,19 +62,9 @@ function LocationDetailView() {
     }
   };
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       <MemoizedHeader />
-      <div className="detail-container">
-        <div className="map-container">
-          <img
-            style={{ width: "250px" }}
-            src={location?.image}
-            alt="locationImage"
-          />
-          <KaKao location={location} size={300} />
-        </div>
-        <LocationDetail location={location} />
-      </div>
+      <MemoizedLocationInfo location={location} />
       <div className="button-container">
         <button onClick={handleDeate}>Delete Location</button>
       </div>

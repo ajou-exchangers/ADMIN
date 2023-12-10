@@ -5,6 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import MemoizedHeader from "../components/Header";
 import KaKao from "../components/KaKao";
 import "./NoneLocationDetailView.css";
+import MemoizedLocationInfo from "../components/LocationInfo";
 
 function NoneLocationDetailView() {
   const navigate = useNavigate();
@@ -77,19 +78,9 @@ function NoneLocationDetailView() {
     }
   };
   return (
-    <div style={{ height: "100vh" }}>
+    <div>
       <MemoizedHeader />
-      <div className="detail-container">
-        <div className="map-container">
-          <img
-            style={{ width: "250px" }}
-            src={location?.image}
-            alt="locationImage"
-          />
-          <KaKao location={location} size={300} />
-        </div>
-        <LocationDetail location={location} />
-      </div>
+      <MemoizedLocationInfo location={location} />
       <div className="button-container">
         <button onClick={handleAccept}>Accept Location</button>
         <button onClick={handleReject}>Reject Location</button>
