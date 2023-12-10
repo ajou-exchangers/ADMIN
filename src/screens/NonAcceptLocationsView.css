@@ -1,15 +1,10 @@
-h2 {
-  margin-inline: 50px;
-}
-.location-list {
-  list-style: none;
-  padding: 0;
-  margin-inline: 50px;
-}
-
 .pagination-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pagination-buttons button {
+  margin-left: 20px;
 }

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./NonAcceptLocationsView.css";
-import Header from "../components/Header";
-import LocationItem from "../components/LocationItem";
-import { Link, useNavigate } from "react-router-dom";
+import MemoizedHeader from "../components/Header";
+import MemoizedLocationList from "../components/LocationList";
+import { useNavigate } from "react-router-dom";
 
 const NonAcceptLocationsView = () => {
   const navigate = useNavigate();
   const [locations, setLocations] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,20 +38,23 @@ const NonAcceptLocationsView = () => {
 
   return (
     <div>
-      <Header />
-      <h2>Unregistered locations</h2>
-      <ul className="location-list">
-        {locations.map((location) => (
-          <Link key={location._id} to={`/none-locations/${location._id}`}>
-            <LocationItem location={location} />
-          </Link>
-        ))}
-      </ul>
+      <MemoizedHeader />
+      <MemoizedLocationList
+        title={"Unregistered locations"}
+        locations={locations}
+        link={"/none-locations"}
+      />
       <div className="pagination-buttons">
-        <button onClick={() => setCurrentPage(currentPage - 1)}>
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
           Previous Page
         </button>
-        <button onClick={() => setCurrentPage(currentPage + 1)}>
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={locations.length < itemsPerPage}
+        >
           Next Page
         </button>
       </div>

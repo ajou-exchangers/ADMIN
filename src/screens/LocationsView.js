@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./NonAcceptLocationsView.css";
-import Header from "../components/Header";
+import MemoizedHeader from "../components/Header";
 import MemoizedLocationList from "../components/LocationList";
 
 const LocationsView = () => {
   const [locations, setLocations] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 10;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +35,7 @@ const LocationsView = () => {
 
   return (
     <div>
-      <Header />
+      <MemoizedHeader />
       <MemoizedLocationList
         title={"Locations"}
         locations={currentItems}

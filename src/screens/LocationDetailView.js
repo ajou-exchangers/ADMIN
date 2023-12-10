@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import LocationDetail from "../components/LocationDetail";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import MemoizedHeader from "../components/Header";
 import KaKao from "../components/KaKao";
 import "./NoneLocationDetailView.css";
 
@@ -64,7 +64,7 @@ function LocationDetailView() {
   };
   return (
     <div style={{ height: "100vh" }}>
-      <Header />
+      <MemoizedHeader />
       <div className="detail-container">
         <div className="map-container">
           <img
