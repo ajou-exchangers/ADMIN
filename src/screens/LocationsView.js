@@ -28,14 +28,21 @@ const LocationsView = () => {
     fetchData();
   }, []);
 
-  const handleSearch = async (searchTerm) => {
+  const handleSearch = async (searchTerm, category) => {
     try {
-      const response = await axios.get(
-        `https://exchangers.site/api/exchangers/v1/locations?search=${searchTerm}`
-      );
+      console.log("ok");
+      let apiUrl = "https://exchangers.site/api/exchangers/v1/locations";
+      if (category && category !== "All") {
+        apiUrl += `?category=${category}`;
+      }
+      if (searchTerm) {
+        apiUrl += `${category ? "&" : "?"}search=${searchTerm}`;
+      }
+
+      const response = await axios.get(apiUrl);
       setLocations(response.data);
     } catch (error) {
-      alert("Falied to fetch locations");
+      alert("Failed to fetch locations");
     }
   };
 

@@ -28,12 +28,12 @@ const Header = () => {
       </div>
       <div className="header-right">
         <Link to="/none-locations">
-          <button>장소 등록 목록</button>
+          <button>Unregistered locations</button>
         </Link>
         <Link to="/locations">
-          <button>등록된 장소 목록</button>
+          <button>Registered Locations</button>
         </Link>
-        <button onClick={handleLogout}>로그아웃</button>
+        <button onClick={handleLogout}>Logout</button>
       </div>
     </header>
   );

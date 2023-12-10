@@ -1,15 +1,29 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
+const validCategories = [
+  "All",
+  "Restaurant",
+  "Cafe",
+  "Pharmacy",
+  "Bank",
+  "Convenience store",
+];
+
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
   const handleSearch = () => {
-    onSearch(searchTerm);
+    onSearch(searchTerm, selectedCategory);
   };
 
   return (
@@ -18,10 +32,17 @@ const SearchBar = ({ onSearch }) => {
         type="text"
         value={searchTerm}
         onChange={handleInputChange}
-        placeholder="검색어를 입력하세요"
+        placeholder="Please enter your search term."
       />
+      <select value={selectedCategory} onChange={handleCategoryChange}>
+        {validCategories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
       <button className="search-button" onClick={handleSearch}>
-        검색
+        Search
       </button>
     </div>
   );

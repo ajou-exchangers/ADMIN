@@ -54,3 +54,9 @@
   font-size: small;
   font-weight: bold;
 }
+
+.category-container {
+  background-color: #ccc;
+  padding-inline: 10px;
+  border-radius: 8px;
+}

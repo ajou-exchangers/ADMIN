@@ -9,7 +9,7 @@ function LocationItem({ location }) {
           <p>{location.koName}</p>
           <p>( {location.enName} )</p>
         </div>
-        <p>{location.category}</p>
+        <p className="category-container">{location.category}</p>
       </div>
       <div className="bottom-container">
         <div className="address-info">
