@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./NonAcceptLocationsView.css";
 import Header from "../components/Header";
-import LocationItem from "../components/LocationItem";
-import { Link } from "react-router-dom";
+import MemoizedLocationList from "../components/LocationList";
 
 const LocationsView = () => {
   const [locations, setLocations] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 5;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,14 +36,11 @@ const LocationsView = () => {
   return (
     <div>
       <Header />
-      <h2>Locations</h2>
-      <ul className="location-list">
-        {currentItems.map((location) => (
-          <Link key={location._id} to={`/locations/${location._id}`}>
-            <LocationItem location={location} />
-          </Link>
-        ))}
-      </ul>
+      <MemoizedLocationList
+        title={"Locations"}
+        locations={currentItems}
+        link={"/locations"}
+      />
       <div className="pagination-buttons">
         <button
           onClick={() => paginate(currentPage - 1)}
