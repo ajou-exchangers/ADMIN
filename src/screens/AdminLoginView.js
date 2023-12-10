@@ -29,7 +29,7 @@ const AdminLoginView = () => {
 
   return (
     <div className="admin-login-container">
-      <img className="logo" src="logo.png" alt="logo" />
+      <img className="logo" src="globe-americas-solid.svg" alt="logo" />
       <h1 className="admin-login-title">Exchangers Admin</h1>
       <div className="admin-login-form">
         <input
