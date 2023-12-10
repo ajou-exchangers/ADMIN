@@ -51,6 +51,9 @@ function NoneLocationDetailView() {
           alert("Not Found Location");
           navigate("/none-locations");
           return;
+        } else if (e.response.status === 409) {
+          alert("This place already exists. Please check again.");
+          return;
         }
       }
       alert("Falied to accept location");
