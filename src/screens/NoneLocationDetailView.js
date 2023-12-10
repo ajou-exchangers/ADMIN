@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import LocationDetail from "../components/LocationDetail";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import MemoizedHeader from "../components/Header";
-import KaKao from "../components/KaKao";
 import "./NoneLocationDetailView.css";
 import MemoizedLocationInfo from "../components/LocationInfo";
 

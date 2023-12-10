@@ -3,6 +3,7 @@ import axios from "axios";
 import "./NonAcceptLocationsView.css";
 import MemoizedHeader from "../components/Header";
 import MemoizedLocationList from "../components/LocationList";
+import SearchBar from "../components/SearchBar";
 
 const LocationsView = () => {
   const [locations, setLocations] = useState([]);
@@ -27,6 +28,17 @@ const LocationsView = () => {
     fetchData();
   }, []);
 
+  const handleSearch = async (searchTerm) => {
+    try {
+      const response = await axios.get(
+        `https://exchangers.site/api/exchangers/v1/locations?search=${searchTerm}`
+      );
+      setLocations(response.data);
+    } catch (error) {
+      alert("Falied to fetch locations");
+    }
+  };
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = locations.slice(indexOfFirstItem, indexOfLastItem);
@@ -36,6 +48,7 @@ const LocationsView = () => {
   return (
     <div>
       <MemoizedHeader />
+      <SearchBar onSearch={handleSearch} />
       <MemoizedLocationList
         title={"Locations"}
         locations={currentItems}
