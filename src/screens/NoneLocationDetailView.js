@@ -20,9 +20,15 @@ function NoneLocationDetailView() {
           }
         );
         setLocation(response.data);
-      } catch (error) {
-        alert("Failed to fetch location details. Please try again.");
-        navigate("/none-locations");
+      } catch (e) {
+        if (e.response) {
+          if (e.response.status === 401 || e.response.status === 403) {
+            alert("You do not have permission.");
+            navigate("/");
+            return;
+          }
+        }
+        alert("Falied to accept location");
       }
     };
 
